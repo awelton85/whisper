@@ -1,7 +1,9 @@
 import openai
 from tkinter import filedialog
+from config import API_KEY
 
-openai.api_key = "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"
+
+openai.api_key = API_KEY
 filepath = filedialog.askopenfilename(initialdir="/home/", title="Select file", filetypes=(("wav files", "*.wav"),
                                                                                            ("all files", "*.*")))
 
