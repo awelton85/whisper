@@ -2,10 +2,7 @@ import openai
 from tkinter import filedialog
 from config import API_KEY
 
-
 openai.api_key = API_KEY
-filepath = filedialog.askopenfilename(initialdir="/home/", title="Select file", filetypes=(("wav files", "*.wav"),
-                                                                                           ("all files", "*.*")))
 
 
 # Transcribe the audio
@@ -15,5 +12,7 @@ def transcribe_audio(file_path):
     return transcript["text"]
 
 
+filepath = filedialog.askopenfilename(initialdir="~", title="Select file", filetypes=(("wav files", "*.wav"),
+                                                                                      ("all files", "*.*")))
 transcription = transcribe_audio(filepath)
 print(transcription)
