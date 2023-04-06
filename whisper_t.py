@@ -15,4 +15,11 @@ def transcribe_audio(file_path):
 filepath = filedialog.askopenfilename(initialdir="~", title="Select file", filetypes=(("wav files", "*.wav"),
                                                                                       ("all files", "*.*")))
 transcription = transcribe_audio(filepath)
-print(transcription)
+
+# write the transcription to a text file
+outfile = filedialog.asksaveasfilename(initialdir="~", title="Save file", filetypes=(("txt files", "*.txt"),
+                                                                                     ("all files", "*.*")))
+
+with open(outfile, "w") as f:
+    f.write(transcription)
+
